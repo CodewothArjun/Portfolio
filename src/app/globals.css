@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0b1120;
+  --bg-elevated: #121a2e;
+  --border: #22304d;
+  --text: #e7ebf3;
+  --text-muted: #8b96ad;
+  --accent: #22d3ee;
+  --accent-dim: #0e7490;
+  --ok: #34d399;
+}
+
+html[data-theme="light"] {
+  --bg: #ecf3ff;
+  --bg-elevated: #ffffff;
+  --border: #d6e0f1;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --accent: #0ea5e9;
+  --accent-dim: #bae6fd;
+  --ok: #059669;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-ok: var(--ok);
+  --font-display: var(--font-display-stack);
+  --font-body: var(--font-body-stack);
+  --font-mono: var(--font-mono-stack);
+}
+
+:root {
+  --font-display-stack: "Space Grotesk", Avenir Next, Segoe UI, system-ui, sans-serif;
+  --font-body-stack: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono-stack: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(34, 211, 238, 0.35);
+}
