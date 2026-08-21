@@ -36,7 +36,7 @@ const PROJECTS = [
     title: "This Portfolio",
     desc: "Personal portfolio website built with Next.js and Tailwind CSS to showcase projects, skills, and experience through a modern and interactive user interface.",
     stack: ["Next.js", "Tailwind CSS", "GSAP"],
-    href: "https://github.com/CodewothArjun/Portfolio",
+    href: "#",
   },
 ];
 
@@ -47,7 +47,8 @@ export default function Home() {
       <nav className="sticky top-0 z-40 border-b border-border/60 bg-bg/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <span className="font-display text-xs font-semibold tracking-tight sm:text-sm md:text-base">
-            &lt;Arjun/&gt;
+            <a href="#">
+            &lt;Arjun/&gt;</a>
           </span>
           <div className="flex items-center gap-6 font-mono text-xs text-text-muted">
             <a href="#projects" className="hover:text-accent transition-colors">
